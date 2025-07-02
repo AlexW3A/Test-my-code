@@ -1,0 +1,24 @@
+import random
+import tkinter as tk
+
+quotes = [
+    "Каждое утро мы рождаемся заново.",
+    "Не ждите. Время никогда не будет подходящим.",
+    "Ошибка — это просто доказательство того, что вы пытались."
+]
+
+def get_random_quote():
+    return random.choice(quotes)
+
+def show_quote():
+    label.config(text=get_random_quote())
+
+root = tk.Tk()
+root.title("Генератор цитат")
+label = tk.Label(root, text="", font=("Arial", 14), wraplength=400, justify="center")
+label.pack(pady=20)
+
+btn = tk.Button(root, text="Показать цитату", command=show_quote)
+btn.pack()
+
+root.mainloop()
